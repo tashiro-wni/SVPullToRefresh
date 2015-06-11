@@ -86,7 +86,8 @@ UIEdgeInsets scrollViewOriginalContentInsets;
 
 - (void)setShowsInfiniteScrolling:(BOOL)showsInfiniteScrolling {
     self.infiniteScrollingView.hidden = !showsInfiniteScrolling;
-    
+// Quick & Dirty fix to avoid crash on iOS 8
+/*
     if(!showsInfiniteScrolling) {
       if (self.infiniteScrollingView.isObserving) {
         [self removeObserver:self.infiniteScrollingView forKeyPath:@"contentOffset"];
@@ -106,6 +107,7 @@ UIEdgeInsets scrollViewOriginalContentInsets;
         self.infiniteScrollingView.frame = CGRectMake(0, self.contentSize.height, self.infiniteScrollingView.bounds.size.width, SVInfiniteScrollingViewHeight);
       }
     }
+*/
 }
 
 - (BOOL)showsInfiniteScrolling {
